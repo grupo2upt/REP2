@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="PyoyectoChido.jar" size="6445" download="eager" />
+    <jar href="PyoyectoChido.jar" size="6730" download="eager" />
     <jar href="lib/mssql-jdbc-7.0.0.jre8.jar" size="1166240" download="eager" />
     <jar href="lib/postgresql-42.2.6.jar" size="842825" download="eager" />
     <jar href="lib/postgresql-8.3-603.jdbc4.jar" size="474746" download="eager" />

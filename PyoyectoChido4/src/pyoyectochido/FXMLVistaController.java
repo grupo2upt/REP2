@@ -61,10 +61,10 @@ private Connection conexion;
     private TextField but11;
     @FXML
     public void handleButtonActionn(ActionEvent event) throws ClassNotFoundException, SQLException {
-        //aun no sirve
+       
         Statement st;
         Class.forName(driver);
-        //Connection conne=(Connection) DriverManager.getConnection(ruta,user,password);
+        Connection conne=(Connection) DriverManager.getConnection(ruta,user,password);
         // consulta=(Statement) conne.createStatement();
         //consulta.executeUpdate("insert into usuarios(Nombre,Edad,Color,Deporte) values('"+but.getText()+"',"+edad.getText()+",'"+color.getText()+"','"+deporte.getText()+"')");  
         conn=DriverManager.getConnection(ruta,user,password);
@@ -75,7 +75,14 @@ private Connection conexion;
                                            +(edad.getText())+"', '"
                                            +color.getText()+"', '"
                                            +deporte.getText()+"');";
+        
+        String SQL1 = "INSERT INTO suceso1(nombre, edad, color, deporte, suceso) VALUES ('"
+                                           +but.getText()+"', '"
+                                           +(edad.getText())+"', '"
+                                           +color.getText()+"', '"
+                                           +deporte.getText()+"', 'insertado');";
         st.execute(SQL);
+        st.execute(SQL1);
         conn.close();
         JOptionPane.showMessageDialog(null,"Registro Guardado Exitosamente XD");
         limpiar();
@@ -83,21 +90,36 @@ private Connection conexion;
     
     @FXML
     public void handleButtonActionM(ActionEvent event) throws ClassNotFoundException, SQLException {
-        //falta por checar
+        
+        
         Class.forName(driver);
         Connection conne=(Connection) DriverManager.getConnection(ruta,user,password);
+       String SQL1 = "INSERT INTO suceso1(nombre, edad, color, deporte,suceso) VALUES ('"
+                                           +but1.getText()+"', '"
+                                           +(edad1.getText())+"', '"
+                                           +color1.getText()+"', '"
+                                           +deporte1.getText()+"', 'modificado');";
         Statement consulta=(Statement) conne.createStatement();
-        consulta.executeUpdate("update usuarios set Edad= "+edad1.getText()+",Color= '"+color1.getText()+"',Deporte='"+deporte1.getText()+"' where Nombre='"+but1.getText()+"'");   
+        consulta.executeUpdate("update usuarios set Edad= "+edad1.getText()+",Color= '"+color1.getText()+"',Deporte='"+deporte1.getText()+"' where Nombre='"+but1.getText()+"'");
+        consulta.executeUpdate(SQL1);
+        conne.close();
+        
         JOptionPane.showMessageDialog(null,"Registro Modificado");
         limpiar();
      
     }
     
     public void handleButtonActionE(ActionEvent event) throws ClassNotFoundException, SQLException {
-        //falta por checar
+       
+         Statement st1;
         Class.forName(driver);
         Connection conne=(Connection) DriverManager.getConnection(ruta,user,password);
+        st1=conne.createStatement();
         Statement consulta=(Statement) conne.createStatement();
+        String SQL1;
+        SQL1 = "INSERT INTO suceso1(nombre, edad, color, deporte, suceso) VALUES ('"
+            +but11.getText()+"', 0, '-----', '-----', 'eliminado');";
+        st1.execute(SQL1);
         consulta.executeUpdate("delete from usuarios where Nombre='"+but11.getText()+"'");
         JOptionPane.showMessageDialog(null,"Registro Eliminado");
         limpiar();
@@ -112,7 +134,7 @@ private Connection conexion;
             Class.forName(driver);
             Connection conne=(Connection) DriverManager.getConnection(ruta,user,password);
             //SQL FOR SELECTING ALL OF CUSTOMER
-            String SQL = "SELECT * from usuarios";
+            String SQL = "SELECT * from suceso1";
             //ResultSet
             ResultSet rs = conne.createStatement().executeQuery(SQL);
      
