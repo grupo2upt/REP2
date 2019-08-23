@@ -29,7 +29,7 @@ Connection conn=null;
 private Connection conexion;
     
     String driver = "org.postgresql.Driver";
-    String ruta = "jdbc:postgresql://172.16.0.68:5432/ciscoDB";
+    String ruta = "jdbc:postgresql://172.16.0.19:5432/ciscoDB";
     String user = "postgres";
     String password = "12345";
     
@@ -77,7 +77,7 @@ private Connection conexion;
                                            +deporte.getText()+"');";
         st.execute(SQL);
         conn.close();
-        JOptionPane.showMessageDialog(null,"Registro Guardado");
+        JOptionPane.showMessageDialog(null,"Registro Guardado Exitosamente XD");
         limpiar();
     }
     
