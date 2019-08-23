@@ -1,0 +1,32 @@
+
+-- Database: "ciscoDB"
+
+-- DROP DATABASE "ciscoDB";
+
+CREATE DATABASE "ciscoDB"
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'es_MX.UTF-8'
+       LC_CTYPE = 'es_MX.UTF-8'
+       CONNECTION LIMIT = -1;
+
+
+
+-- Table: usuarios
+
+-- DROP TABLE usuarios;
+
+CREATE TABLE usuarios
+(
+  nombre character varying(100),
+  edad integer,
+  color character varying(100),
+  deporte character varying(100)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE usuarios
+  OWNER TO postgres;
+
