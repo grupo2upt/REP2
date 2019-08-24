@@ -23,7 +23,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.util.Callback;
 import javafx.scene.control.TableColumn.CellDataFeatures;
-
+//comentario de clase
 public class FXMLVistaController implements Initializable {
 Connection conn=null;
 private Connection conexion;
